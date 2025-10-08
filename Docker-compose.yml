@@ -12,6 +12,12 @@ services:
       - "traefik.http.services.politieke-tijdschriften.loadbalancer.server.port=80"
       - "traefik.http.routers.politieke-tijdschriften.entrypoints=http"
       - "traefik.http.routers.politieke-tijdschriften.rule=Host(`http://religious-policies.huygens.knaw.nl/`)"
+  cron:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - hi-religous-politics-html:/app/repo/html
 
 volumes:
   hi-religous-politics-html:
