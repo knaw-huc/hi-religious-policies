@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    image: nginx
+    volumes:
+      - hi-religous-politics-html:/usr/share/nginx/html
+    networks:
+      - traefik-public
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.politieke-tijdschriften.loadbalancer.server.port=80"
+      - "traefik.http.routers.politieke-tijdschriften.entrypoints=http"
+      - "traefik.http.routers.politieke-tijdschriften.rule=Host(`http://religious-policies.huygens.knaw.nl/`)"
+
+volumes:
+  hi-religous-politics-html:
+
+networks:
+  traefik-public:
+    external: true
