@@ -1,7 +1,7 @@
-FROM python:3.10
+FROM ubuntu:latest
 
 RUN apt-get update && apt-get -y install cron gettext
-# TODO install git
+RUN apt-get -y install git
 
 WORKDIR /app
 
