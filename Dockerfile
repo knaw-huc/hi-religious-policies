@@ -4,7 +4,6 @@ RUN apt-get update && apt-get -y install cron gettext && apt-get -y install git
 
 WORKDIR /app
 RUN mkdir /app/repo
-#RUN git init /app/repo
 RUN git clone https://github.com/knaw-huc/hi-religious-policies.git /app/repo/hi-religious-policies
 
 COPY cron/crontab /app/crontab
