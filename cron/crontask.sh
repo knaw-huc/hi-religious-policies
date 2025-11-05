@@ -6,5 +6,5 @@ if [ -d /app/repo/hi-religious-policies/.git ]; then
 else
     git clone https://github.com/knaw-huc/hi-religious-policies.git /app/repo/hi-religious-policies
 fi
-cp -r /app/repo/hi-religious-policies/html /app/repo/html
+cp -r /app/repo/hi-religious-policies/html/* /app/repo/html/
 
