@@ -4,7 +4,7 @@ services:
   web:
     image: nginx
     volumes:
-      - hi-religous-politics-html:/usr/share/nginx/html
+      - hi-religous-policies-html:/usr/share/nginx/html
     networks:
       - traefik-public
     labels:
@@ -17,10 +17,10 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - hi-religous-politics-html:/app/repo/html
+      - hi-religous-policies-html:/app/repo/html
 
 volumes:
-  hi-religous-politics-html:
+  hi-religous-policies-html:
 
 networks:
   traefik-public:
